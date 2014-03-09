@@ -1,0 +1,10 @@
+{
+  "name": "termpsensor",
+  "version": "0.0.0",
+  "description": "termpsensor",
+  "main": "app.js",
+  "author": {
+    "name": "Gerald",
+    "email": ""
+  }
+}
