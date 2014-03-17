@@ -1,10 +1,10 @@
 {
-  "name": "termpsensor",
-  "version": "0.0.0",
-  "description": "termpsensor",
-  "main": "app.js",
+  "name": "Device Service",
+  "version": "0.0.1",
+  "description": "A device service for the PADNUG IoT presentation.",
+  "main": "service.js",
   "author": {
-    "name": "Gerald",
-    "email": ""
+    "name": "Gerald Aden",
+    "email": "gerald@gmatech.com"
   }
 }
