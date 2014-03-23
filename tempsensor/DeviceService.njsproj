@@ -35,10 +35,10 @@
     <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\lib\typechecker.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\out\lib\extract-opts.js" />
     <Compile Include="node_modules\getmac\out\lib\getmac.js" />
-    <Compile Include="Reporter.js" />
+    <Compile Include="reporter.js" />
     <Compile Include="service.js" />
     <Compile Include="fakeTempSensor.js" />
-    <Compile Include="tempReporter.js" />
+    <Compile Include="fileReporter.js" />
     <Content Include="node_modules\.bin\getmac-node" />
     <Content Include="node_modules\.bin\getmac-node.cmd" />
     <Content Include="node_modules\getmac\.npmignore" />

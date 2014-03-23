@@ -1,12 +1,10 @@
-var tempSensor = require('./fakeTempSensor');
-var tempReporter = require('./tempReporter');
-var reporterModule = require('./reporter');
+var TempSensor = require('./fakeTempSensor');
+var Reporter = require('./fileReporter');
 
-var reporter = new reporterModule.Reporter();
-reporter.report();
+var reporter = Object.create(Reporter);
 
 setInterval(function() {
-    var temp = tempSensor.readTemperature(function(temp) {
-        tempReporter.report(temp);
+    var temp = TempSensor.readTemperature(function(temp) {
+        reporter.report(temp);
     });
-}, 5000);
+}, 1000);
