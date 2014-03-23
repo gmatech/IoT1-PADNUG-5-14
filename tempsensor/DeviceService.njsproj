@@ -38,7 +38,8 @@
     <Compile Include="reporter.js" />
     <Compile Include="service.js" />
     <Compile Include="fakeTempSensor.js" />
-    <Compile Include="fileReporter.js" />
+    <Compile Include="consoleReporter.js" />
+    <Compile Include="utilities.js" />
     <Content Include="node_modules\.bin\getmac-node" />
     <Content Include="node_modules\.bin\getmac-node.cmd" />
     <Content Include="node_modules\getmac\.npmignore" />

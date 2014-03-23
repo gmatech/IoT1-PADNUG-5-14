@@ -1,7 +1,7 @@
 var TempSensor = require('./fakeTempSensor');
-var Reporter = require('./fileReporter');
+var Reporter = require('./consoleReporter');
 
-var reporter = Object.create(Reporter);
+var reporter = new Reporter();
 
 setInterval(function() {
     var temp = TempSensor.readTemperature(function(temp) {

@@ -1,4 +1,5 @@
 ﻿var macModule = require('getmac');
+var utilities = require('./utilities');
 
 function Reporter() {
 }
@@ -13,6 +14,10 @@ Reporter.prototype = {
             if (err) throw err;
             callback(macAddress);    
         });
+    },
+
+    getIpAddress : function() {
+        return utilities.getIpAddress();
     }
 }
 
