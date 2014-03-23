@@ -30,11 +30,50 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="node_modules\getmac\node_modules\extract-opts\example.js" />
+    <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\cyclic.js" />
+    <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\lib\typechecker.js" />
+    <Compile Include="node_modules\getmac\node_modules\extract-opts\out\lib\extract-opts.js" />
+    <Compile Include="node_modules\getmac\out\lib\getmac.js" />
+    <Compile Include="Reporter.js" />
     <Compile Include="service.js" />
     <Compile Include="fakeTempSensor.js" />
     <Compile Include="tempReporter.js" />
+    <Content Include="node_modules\.bin\getmac-node" />
+    <Content Include="node_modules\.bin\getmac-node.cmd" />
+    <Content Include="node_modules\getmac\.npmignore" />
+    <Content Include="node_modules\getmac\bin\getmac-node" />
+    <Content Include="node_modules\getmac\History.md" />
+    <Content Include="node_modules\getmac\LICENSE.md" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\.npmignore" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\LICENSE.md" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\.npmignore" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\History.md" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\LICENSE.md" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\package.json" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\README.md" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\package.json" />
+    <Content Include="node_modules\getmac\node_modules\extract-opts\README.md" />
+    <Content Include="node_modules\getmac\package.json" />
+    <Content Include="node_modules\getmac\README.md" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="node_modules\" />
+    <Folder Include="node_modules\.bin\" />
+    <Folder Include="node_modules\getmac\" />
+    <Folder Include="node_modules\getmac\bin\" />
+    <Folder Include="node_modules\getmac\node_modules\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\node_modules\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\lib\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\out\" />
+    <Folder Include="node_modules\getmac\node_modules\extract-opts\out\lib\" />
+    <Folder Include="node_modules\getmac\out\" />
+    <Folder Include="node_modules\getmac\out\lib\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
