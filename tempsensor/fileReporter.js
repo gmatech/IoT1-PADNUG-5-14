@@ -18,7 +18,6 @@ FileReporter.prototype.report = function(temp) {
             timestamp: Date.now(),
             data: {temperature: temp}
         };
-        console.log(JSON.stringify(status));
         fs.appendFile(self.filePath, JSON.stringify(status) + os.EOL, function(err, data) {
             if (err) {
                 return console.log('Error writing to: ' + self.filePath);
