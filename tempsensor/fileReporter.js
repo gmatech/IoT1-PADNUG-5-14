@@ -1,6 +1,5 @@
 ﻿var fs = require('fs');
 var os = require('os');
-var util = require('util');
 var Reporter = require('./reporter');
 
 function FileReporter(configuredFilePath) {
