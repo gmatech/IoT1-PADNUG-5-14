@@ -1,4 +1,4 @@
-﻿var Reporter = require('./Reporter');
+﻿var Reporter = require('./reporter');
 
 function FileReporter() {
 }

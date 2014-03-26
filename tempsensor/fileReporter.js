@@ -1,6 +1,7 @@
 ﻿var fs = require('fs');
 var os = require('os');
-var Reporter = require('./Reporter');
+var util = require('util');
+var Reporter = require('./reporter');
 
 function FileReporter(configuredFilePath) {
     this.filePath = configuredFilePath;
@@ -18,9 +19,10 @@ FileReporter.prototype.report = function(temp) {
             timestamp: Date.now(),
             data: {temperature: temp}
         };
+        console.log(JSON.stringify(status));
         fs.appendFile(self.filePath, JSON.stringify(status) + os.EOL, function(err, data) {
             if (err) {
-                return console.log('Error writing to: ' + self.filePath);
+                return console.log('Error (%s) writing to: %s', err, self.filePath);
             }
         });
     });
