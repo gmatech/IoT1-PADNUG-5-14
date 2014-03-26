@@ -1,15 +1,30 @@
-﻿var Reporter = require('./Reporter');
+﻿var fs = require('fs');
+var os = require('os');
+var Reporter = require('./Reporter');
 
-function FileReporter() {
+function FileReporter(configuredFilePath) {
+    this.filePath = configuredFilePath;
 }
 
 FileReporter.prototype =  new Reporter();
 FileReporter.prototype.report = function(temp) {
-    console.log('temperature: ' + temp);
-
-    Reporter.getDeviceId(function(id) {
-        console.log('device id: ' + id);
+    var status;
+    var self = this;
+    this.getDeviceId(function(id) {
+        status = {
+            type: "temp",
+            ip: self.getIpAddress(),
+            deviceId: id,
+            timestamp: Date.now(),
+            data: {temperature: temp}
+        };
+        console.log(JSON.stringify(status));
+        fs.appendFile(self.filePath, JSON.stringify(status) + os.EOL, function(err, data) {
+            if (err) {
+                return console.log('Error writing to: ' + self.filePath);
+            }
+        });
     });
-};
+}; 
 
 module.exports = FileReporter;

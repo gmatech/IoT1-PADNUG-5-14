@@ -30,6 +30,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="configure.js" />
+    <Compile Include="fileReporter.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\example.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\cyclic.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\lib\typechecker.js" />
@@ -40,6 +42,7 @@
     <Compile Include="fakeTempSensor.js" />
     <Compile Include="consoleReporter.js" />
     <Compile Include="utilities.js" />
+    <Content Include="config.json" />
     <Content Include="node_modules\.bin\getmac-node" />
     <Content Include="node_modules\.bin\getmac-node.cmd" />
     <Content Include="node_modules\getmac\.npmignore" />
