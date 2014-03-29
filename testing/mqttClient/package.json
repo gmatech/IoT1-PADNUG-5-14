@@ -1,0 +1,13 @@
+{
+  "name": "mqttClient",
+  "version": "0.0.0",
+  "description": "mqttClient",
+  "main": "app.js",
+  "author": {
+    "name": "Gerald",
+    "email": ""
+  }
+  "devDependencies": {
+    "mqtt": "~0.3.8"
+  }
+}

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="configure.js" />
     <Compile Include="fileReporter.js" />
+    <Compile Include="mqttCloudReporter.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\example.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\cyclic.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\node_modules\typechecker\out\lib\typechecker.js" />

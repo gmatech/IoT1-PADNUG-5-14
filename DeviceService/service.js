@@ -1,5 +1,5 @@
 var TempSensor = require('./fakeTempSensor');
-var Reporter = require('./fileReporter');
+var Reporter = require('./mqttCloudReporter');
 var configure = require('./configure');
 
 configure.init();

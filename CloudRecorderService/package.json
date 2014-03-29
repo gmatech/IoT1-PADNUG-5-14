@@ -1,0 +1,13 @@
+{
+  "name": "TempRecorder",
+  "version": "0.0.0",
+  "description": "TempRecorder",
+  "main": "app.js",
+  "author": {
+    "name": "Gerald",
+    "email": ""
+  },
+  "devDependencies": {
+    "mqtt": "~0.3.8"
+  }
+}
