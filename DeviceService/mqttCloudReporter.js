@@ -2,7 +2,7 @@
 var Reporter = require('./reporter');
 
 function MqttCloudReporter(host, port) {
-    this.client = mqtt.createClient(4883, 'localhost');
+    this.client = mqtt.createClient(port, host);
 }
 
 MqttCloudReporter.prototype =  new Reporter();

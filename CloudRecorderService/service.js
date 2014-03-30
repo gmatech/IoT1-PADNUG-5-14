@@ -1,6 +1,11 @@
 var mqtt = require('mqtt');
+var configure = require('./configure');
 
-client = mqtt.createClient(4883, 'localhost');
+configure.init();
+var mqttHost = configure.get('mqttHost');
+var mqttPort = configure.get('mqttPort');
+
+client = mqtt.createClient(mqttPort, mqttHost);
 
 client.subscribe('temperature');
 

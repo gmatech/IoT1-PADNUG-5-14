@@ -1,4 +1,6 @@
 ﻿{
   "interval": 2000,
-  "filePath": "c:\\tmp\\temp.log"
+  "filePath": "c:\\tmp\\temp.log",
+  "mqttHost": "localhost",
+  "mqttPort": "4883"
 }

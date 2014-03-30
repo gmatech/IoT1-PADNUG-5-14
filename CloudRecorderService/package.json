@@ -8,6 +8,7 @@
     "email": ""
   },
   "devDependencies": {
-    "mqtt": "~0.3.8"
+    "mqtt": "~0.3.8",
+    "nconf": "~0.6.9"
   }
 }

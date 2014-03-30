@@ -29,7 +29,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="configure.js" />
     <Compile Include="service.js" />
+    <Content Include="config.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
