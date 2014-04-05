@@ -1,7 +1,7 @@
 {
-  "name": "TempRecorder",
-  "version": "0.0.0",
-  "description": "TempRecorder",
+  "name": "CloudTempRecorder",
+  "version": "0.0.1",
+  "description": "Records temperature data at a cloud daas provider.",
   "main": "app.js",
   "author": {
     "name": "Gerald",
