@@ -1,6 +1,6 @@
 ﻿{
   "interval": 2000,
   "filePath": "c:\\tmp\\temp.log",
-  "mqttHost": "padnug1.cloudapp.net",
+  "mqttHost": "localhost",
   "mqttPort": "1883"
 }
