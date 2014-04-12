@@ -16,7 +16,7 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "mqttClient", "testing\mqttC
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "BrowserMonitor", "BrowserMonitor\BrowserMonitor.njsproj", "{83AAC9F6-1094-40FC-8CE9-2CA0FE8CCBAC}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CloudRecorderServiceMongo", "CloudReporterServiceMongo\CloudRecorderServiceMongo.njsproj", "{5C94CF71-ECD9-419B-8804-146A6490BBF2}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CloudRecorderServiceMongo", "CloudRecorderServiceMongo\CloudRecorderServiceMongo.njsproj", "{5C94CF71-ECD9-419B-8804-146A6490BBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
