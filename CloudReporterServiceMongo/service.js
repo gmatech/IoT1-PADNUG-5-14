@@ -1,4 +1,5 @@
 ﻿var mqtt = require('mqtt');
+var mongoose = require('mongoose');
 var configure = require('./configure');
 
 configure.init();
@@ -9,26 +10,38 @@ client = mqtt.createClient(mqttPort, mqttHost);
 
 client.subscribe('temperature');
 
-var dbClient = require('mongodb').MongoClient;
+var tempSchema = mongoose.Schema({
+    temperature: Number
+});
+var recordSchema = mongoose.Schema({
+    type: String,
+    ip: String,
+    deviceId: String,
+    timestamp: Date,
+    data: [tempSchema]
+});
+var Record = mongoose.model('Record', recordSchema);
 
 client.on('message', function(topic, message) {
-    console.log("Connecting");
-    dbClient.connect("mongodb://localhost:27017/sensors", function(error, db) {
-        if (error) {
-            console.log('Connect error: ' + error);
-            return;
-        }
-        console.log("Done connecting");
-        console.log('Inserting ...');
-        var temperatureReading = JSON.parse(message);
-        db.collection('temperature').insert(temperatureReading, function(error, result) {
-            if (error) {
-                console.log('Insert error: ' + error);
+    console.log('message: ' + message);
+    console.log("connecting...");
+    mongoose.connect('mongodb://localhost:27017/sensors');
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function callback () {
+        console.log("connected");
+        var recordData = JSON.parse(message);
+        console.log('saving data: ' + recordData);
+        var record = new Record(recordData);
+        console.log('saving record: ' + record);
+        record.save(function(err) {
+            if (!err) {
+                console.log('record saved!');
             } else {
-                console.log('Done inserting ...');
+                console.log('save error: ' + err);    
             }
-            console.log('Closing ...');
-            db.close();
+            console.log("disconnecting ...");
+            mongoose.disconnect();
         });
     });
 });
