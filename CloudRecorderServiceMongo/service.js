@@ -1,13 +1,18 @@
-﻿//var process = require('process');
-var mqtt = require('mqtt');
+﻿var mqtt = require('mqtt');
 var mongoose = require('mongoose');
 var configure = require('./configure');
 
-/*
 process.on('exit', function() {
-    console.log('Exiting');
+    console.log('exiting');
 });
-*/
+
+process.on('SIGINT', function() {
+    console.log('disconnecting ...');
+    client.end();
+    mongoose.disconnect();
+    console.log('goodbye');
+    process.exit();
+});
 
 configure.init();
 var mqttHost = configure.get('mqttHost');
@@ -29,13 +34,15 @@ var recordSchema = mongoose.Schema({
 });
 var Record = mongoose.model('Record', recordSchema);
 
-console.log("connecting...");
+console.log("connecting to database...");
 mongoose.connect('mongodb://localhost:27017/sensors');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
+    console.log("connected to database");
+    console.log("waiting for message...");
     client.on('message', function(topic, message) {
-        console.log('message: ' + message);
+        console.log('got message: ' + message);
         var recordData = JSON.parse(message);
         var record = new Record(recordData);
         console.log('saving record: ' + record);
