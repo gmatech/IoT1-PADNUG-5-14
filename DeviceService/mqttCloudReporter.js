@@ -19,7 +19,7 @@ MqttCloudReporter.prototype.report = function(temp) {
             ip: self.getIpAddress(),
             deviceId: id,
             timestamp: Date.now(),
-            data: {temperature: temp}
+            data: [{temperature: temp}]
         };
         var currentStatus = JSON.stringify(status);
         console.log(currentStatus);        
