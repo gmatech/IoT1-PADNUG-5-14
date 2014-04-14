@@ -2,6 +2,23 @@ var TempSensor = require('./fakeTempSensor');
 var Reporter = require('./mqttCloudReporter');
 var configure = require('./configure');
 
+process.on('exit', function() {
+    /*
+    reporter.dispose(function() {
+        console.log('goodbye');
+    });
+    */
+    console.log('exiting');
+});
+
+process.on('SIGINT', function() {
+    console.log('disconnecting ...');
+    reporter.dispose(function() {
+        console.log('goodbye');
+        process.exit();
+    });
+});
+
 configure.init();
 
 var interval = configure.get('interval');
