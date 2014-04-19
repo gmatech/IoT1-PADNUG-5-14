@@ -1,0 +1,16 @@
+﻿{
+  "name": "CloudWebApp",
+  "version": "0.0.0",
+  "description": "CloudWebApp",
+  "main": "app.js",
+  "author": {
+    "name": "Gerald",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*",	
+    "mongoose": "~3.8.8"
+  }
+}

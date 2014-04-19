@@ -31,7 +31,6 @@ client.on('message', function(topic, message) {
     db.once('open', function callback () {
         console.log("connected");
         var recordData = JSON.parse(message);
-        console.log('saving data: ' + recordData);
         var record = new Record(recordData);
         console.log('saving record: ' + record);
         record.save(function(err) {
