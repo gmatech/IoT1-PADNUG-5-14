@@ -18,6 +18,9 @@ Reporter.prototype = {
 
     getIpAddress : function() {
         return utilities.getIpAddress();
+    },
+
+    dispose : function() {
     }
 }
 

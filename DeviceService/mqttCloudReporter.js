@@ -22,12 +22,24 @@ MqttCloudReporter.prototype.report = function(temp) {
             data: [{temperature: temp}]
         };
         var currentStatus = JSON.stringify(status);
-        console.log(currentStatus);        
-        self.client.publish('temperature', currentStatus);
+        console.log('Reporting: ' + currentStatus);
+        if (self.client.connected)
+        {
+            self.client.publish('temperature', currentStatus);
+        } else {
+            console.log('Not connected!');
+        }
     });
 }; 
-MqttCloudReporter.prototype.dispose = function() {
-    this.client.end();
+MqttCloudReporter.prototype.dispose = function(callback) {
+    var self = this;
+    console.log("unsubscribing ...");
+    this.client.unsubscribe('temperature', function() {
+        console.log("unsubscribed");
+        console.log("ending messaging ...");
+        self.client.end();
+        callback();
+    });
 }
 
 module.exports = MqttCloudReporter;
