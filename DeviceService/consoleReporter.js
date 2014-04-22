@@ -1,10 +1,10 @@
 ﻿var Reporter = require('./reporter');
 
-function FileReporter() {
+function ConsoleReporter() {
 }
 
-FileReporter.prototype =  new Reporter();
-FileReporter.prototype.report = function(temp) {
+ConsoleReporter.prototype =  new Reporter();
+ConsoleReporter.prototype.report = function(temp) {
     var status;
     var self = this;
     this.getDeviceId(function(id) {
@@ -15,8 +15,8 @@ FileReporter.prototype.report = function(temp) {
             timestamp: Date.now(),
             data: {temperature: temp}
         };
-        console.log(JSON.stringify(status));
+        console.log('console: ' + JSON.stringify(status));
     });
 };
 
-module.exports = FileReporter;
+module.exports = ConsoleReporter;
