@@ -30,7 +30,8 @@ var mqttPort = configure.get('mqttPort');
 var reporter = new Reporter(mqttHost, mqttPort);
 
 setInterval(function() {
-    var temp = TempSensor.readTemperature(function(temp) {
+    TempSensor.readTemperature(function(err, temp) {
+        //console.log("temp: " + temp);
         reporter.report(temp);
     });
 }, interval);
