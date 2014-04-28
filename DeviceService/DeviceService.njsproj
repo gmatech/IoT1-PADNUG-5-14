@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="configure.js" />
+    <Compile Include="tempSensor.js" />
     <Compile Include="fileReporter.js" />
     <Compile Include="mqttCloudReporter.js" />
     <Compile Include="node_modules\getmac\node_modules\extract-opts\example.js" />
