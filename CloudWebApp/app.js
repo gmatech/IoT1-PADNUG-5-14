@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var temperature = require('./routes/temperature');
+var configuration = require('./routes/configuration');
 var http = require('http');
 var path = require('path');
 
@@ -32,6 +33,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/temperature', temperature.list);
+app.get('/configure', configuration.edit);
+app.post('/configure', configuration.save);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

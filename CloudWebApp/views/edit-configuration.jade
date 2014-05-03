@@ -1,0 +1,11 @@
+﻿extends layout
+
+block content
+  form(action='/configure', method='post')
+    input(type='hidden', name='_method', value='POST')
+    p Reading interval: 
+      input(type='text', value='', name='interval')
+    p
+      input(type='submit')
+    p
+      a.btn(href="/", title="Return to main page") Done
