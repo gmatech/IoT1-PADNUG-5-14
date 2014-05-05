@@ -1,3 +1,0 @@
-﻿# BrowserMonitor2
-
-
