@@ -35,7 +35,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/temperature', temperature.list);
 app.get('/configure', configuration.edit);
-app.post('/configure', configuration.save);
+app.post('/configure', configuration.change);
+app.post('/confirm', configuration.confirm);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

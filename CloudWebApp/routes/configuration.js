@@ -5,7 +5,7 @@ exports.edit = function(req, res) {
   res.render('edit-configuration');
 };
 
-exports.save = function(req, res) {
+exports.change = function(req, res) {
     configure.init();
     var mqttHost = configure.get('mqttHost');
     var mqttPort = configure.get('mqttPort');
@@ -17,5 +17,10 @@ exports.save = function(req, res) {
             interval: req.body.interval
         });
         client.publish('configure', configuration);
+        res.render('confirm-configuration');
     });
+};
+
+exports.confirm = function(req, res) {
+  res.render('confirm-configuration');
 };
