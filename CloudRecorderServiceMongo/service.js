@@ -44,6 +44,10 @@ db.once('open', function callback () {
     client.on('message', function(topic, message) {
         console.log('got message: ' + message);
         var recordData = JSON.parse(message);
+        var ctemp = recordData.data[0].temperature;
+        var ftemp = ctemp * 9 / 5 + 32;
+        recordData.data[0].temperature = ftemp;
+        console.log('Converted Celsius: ' + ctemp + ' to Fahrenheit: ' + ftemp)
         var record = new Record(recordData);
         console.log('saving record: ' + record);
         record.save(function(err) {
