@@ -2,6 +2,7 @@
 var TempSensor = require('./fakeTempSensor');
 var Reporter = require('./mqttCloudReporter');
 var configure = require('./configure');
+var mqtt = require('mqtt');
 
 process.on('exit', function() {
     /*
