@@ -14,7 +14,7 @@ exports.save = function(req, res) {
     client.on('connect', function() {
         console.log('connected');
         var configuration = JSON.stringify({
-            interval: 3000
+            interval: req.body.interval
         });
         client.publish('configure', configuration);
     });

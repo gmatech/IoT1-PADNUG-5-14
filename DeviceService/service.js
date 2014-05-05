@@ -36,12 +36,24 @@ client.subscribe('configure');
 client.on('message', function(topic, message) {
     console.log('got message: ' + message);
     var configuration = JSON.parse(message);
-    console.log('got interval: ' + configuration.interval);
+    console.log('setting interval to: ' + configuration.interval);
+    configure.set('interval', configuration.interval);
+    interval = configure.get('interval');
+    configure.save();
+    setTimer();
 });
 
-setInterval(function() {
-    TempSensor.readTemperature(function(err, temp) {
-        //console.log("temp: " + temp);
-        reporter.report(temp);
-    });
-}, interval);
+setTimer();
+
+var timer;
+
+function setTimer() {
+    if (timer != undefined) {
+        clearInterval(timer);
+    }
+    timer = setInterval(function() {
+        TempSensor.readTemperature(function(err, temp) {
+            reporter.report(temp);
+        });
+    }, interval);
+}
