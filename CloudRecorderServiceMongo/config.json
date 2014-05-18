@@ -1,4 +1,4 @@
 ﻿{
-  "mqttHost": "padnug1.cloudapp.net",
+  "mqttHost": "localhost",
   "mqttPort": "1883"
 }
